@@ -14,5 +14,8 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
     
     protected $hidden = [
         'pass',
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 }
