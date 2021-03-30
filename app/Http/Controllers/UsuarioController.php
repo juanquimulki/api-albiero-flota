@@ -10,6 +10,12 @@ use Firebase\JWT\JWT;
 
 class UsuarioController extends Controller
 {
+    public function read(Request $request)
+    {
+        $results = \App\Usuario::all();
+        return parent::response(true,$results);
+    }
+
     public function login(Request $request) {
         // if (date("Y-m-d")>=env('APP_EXP')) {
         //     return response()->json(["success"=>false,"code"=>3,"message"=>"Application expired"]);
