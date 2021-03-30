@@ -31,6 +31,6 @@ class MenuController extends Controller
 
         $menu[] = array("id"=>$id_padre, "label"=>$padre,"options"=>$options);
 
-        return response()->json($menu,200);
+        return parent::response(true,$menu);
     }
 }
