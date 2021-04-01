@@ -10,6 +10,17 @@ use Firebase\JWT\JWT;
 
 class UsuarioController extends Controller
 {
+    public function create(Request $request) {
+        $usuario = new Usuario;
+        
+        $usuario->user = $request->user;
+        $usuario->name = $request->name;
+        $usuario->pass = md5("1234");
+        $save = $usuario->save();        
+
+        return parent::response($save, null);
+    }
+
     public function read(Request $request)
     {
         $results = \App\Usuario::all();
