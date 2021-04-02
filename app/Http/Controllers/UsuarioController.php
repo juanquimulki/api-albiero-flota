@@ -37,6 +37,11 @@ class UsuarioController extends Controller
         return parent::response($save, null);
     }
 
+    public function delete(Request $request) {
+        $destroy = \App\Usuario::destroy($request->id);
+        return parent::response($destroy, null);
+    }
+
     public function login(Request $request) {
         // if (date("Y-m-d")>=env('APP_EXP')) {
         //     return response()->json(["success"=>false,"code"=>3,"message"=>"Application expired"]);
