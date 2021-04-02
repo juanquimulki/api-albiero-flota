@@ -27,6 +27,16 @@ class UsuarioController extends Controller
         return parent::response(true,$results);
     }
 
+    public function update(Request $request) {
+        $usuario = \App\Usuario::find($request->id);
+        
+        $usuario->user = $request->user;
+        $usuario->name = $request->name;
+        $save = $usuario->save();        
+
+        return parent::response($save, null);
+    }
+
     public function login(Request $request) {
         // if (date("Y-m-d")>=env('APP_EXP')) {
         //     return response()->json(["success"=>false,"code"=>3,"message"=>"Application expired"]);
