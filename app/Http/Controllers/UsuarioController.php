@@ -29,6 +29,10 @@ class UsuarioController extends Controller
 
     public function update(Request $request) {
         $usuario = \App\Usuario::find($request->id);
+
+        if ($request->pass) {
+            $usuario->pass = md5($request->pass);
+        }
         
         $usuario->user = $request->user;
         $usuario->name = $request->name;
