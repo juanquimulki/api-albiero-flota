@@ -64,6 +64,11 @@ class UsuarioController extends Controller
 
     public function delete(Request $request) {
         $destroy = \App\Usuario::destroy($request->id);
+
+        if ($destroy) {
+            \App\Permiso::where('user', $request->user)->delete();
+        }
+
         return parent::response($destroy, null);
     }
 
