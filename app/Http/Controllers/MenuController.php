@@ -11,34 +11,28 @@ class MenuController extends Controller
 {
     public function read(Request $request)
     {
-        //$results = DB::table('vw_menu_opciones')->get();
-        $sql = "select id_padre,id_hijo,padre,hijo,link,user as permiso 
-                    from vw_menu_opciones
-                    left outer join 
-                        (select * from permisos where user = 'jmulki') as permisos
-                        on vw_menu_opciones.id_hijo = permisos.id_opcion
-                    where user is not null";
-        
-        $results = DB::select($sql, [$request->user]);
-        
-        $padre = "";
+        $results = app('App\Http\Controllers\PermisoController')->getPermisos($request->user);
+
+        $menu = "";
         $primero = true;
-        $menu = array();
+        $result = array();
         foreach ($results as $item) {
-            if ($item->padre != $padre) {
-                if (!$primero) {
-                    $menu[] = array("id"=>$id_padre, "label"=>$padre,"options"=>$options);
+            if ($item->permiso) {
+                if ($item->menu != $menu) {
+                    if (!$primero) {
+                        $result[] = array("id"=>$id_menu, "label"=>$menu,"options"=>$options);
+                    }
+                    $id_menu = $item->id_menu;
+                    $menu = $item->menu;
+                    $options = array();
+                    $primero = false;
                 }
-                $id_padre = $item->id_padre;
-                $padre = $item->padre;
-                $options = array();
-                $primero = false;
+                $options[] = array("id"=>$item->id_opcion, "label"=>$item->opcion,"link"=>$item->link);
             }
-            $options[] = array("id"=>$item->id_hijo, "label"=>$item->hijo,"link"=>$item->link);
         }
 
-        $menu[] = array("id"=>$id_padre, "label"=>$padre,"options"=>$options);
+        $result[] = array("id"=>$id_menu, "label"=>$menu,"options"=>$options);
 
-        return parent::response(true,$menu);
+        return parent::response(true,$result);
     }
 }
