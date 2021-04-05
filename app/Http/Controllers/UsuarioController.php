@@ -48,6 +48,17 @@ class UsuarioController extends Controller
         $usuario->name = $request->name;
         $save = $usuario->save();        
 
+        if ($save) {
+            \App\Permiso::where('user', $request->user)->delete();
+
+            foreach ($request->permisos as $permiso) {
+                \App\Permiso::create([
+                    "user" => $request->user,
+                    "id_opcion" => $permiso
+                ]);
+            }
+        }
+
         return parent::response($save, null);
     }
 
