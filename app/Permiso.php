@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Permisos extends Model
+class Permiso extends Model
 {
     protected $table  = 'permisos';
     public $timestamps = false;
+    protected $guarded = [];    
 }

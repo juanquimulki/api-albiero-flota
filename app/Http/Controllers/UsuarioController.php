@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Usuario;
+use App\Permiso;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
@@ -17,6 +18,15 @@ class UsuarioController extends Controller
         $usuario->name = $request->name;
         $usuario->pass = md5("1234");
         $save = $usuario->save();        
+
+        if ($save) {
+            foreach ($request->permisos as $permiso) {
+                \App\Permiso::create([
+                    "user" => $request->user,
+                    "id_opcion" => $permiso
+                ]);
+            }
+        }
 
         return parent::response($save, null);
     }
