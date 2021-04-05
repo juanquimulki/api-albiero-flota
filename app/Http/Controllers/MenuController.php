@@ -11,7 +11,15 @@ class MenuController extends Controller
 {
     public function read(Request $request)
     {
-        $results = DB::table('vw_menu_opciones')->get();
+        //$results = DB::table('vw_menu_opciones')->get();
+        $sql = "select id_padre,id_hijo,padre,hijo,link,user as permiso 
+                    from vw_menu_opciones
+                    left outer join 
+                        (select * from permisos where user = 'jmulki') as permisos
+                        on vw_menu_opciones.id_hijo = permisos.id_opcion
+                    where user is not null";
+        
+        $results = DB::select($sql, [$request->user]);
         
         $padre = "";
         $primero = true;

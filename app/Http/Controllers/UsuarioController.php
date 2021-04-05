@@ -81,7 +81,7 @@ class UsuarioController extends Controller
             if ($usuario) {
                 if (md5($request->input('pass')) == $usuario->pass) {
                     $token = $this->getToken();
-                    return response()->json(["success"=>true,"code"=>0,"message"=>"User logged in","name"=>$usuario->nombre,"token"=>$token]);
+                    return response()->json(["success"=>true,"code"=>0,"message"=>"User logged in","name"=>$usuario->name,"token"=>$token]);
                 }
                 else {
                     return response()->json(["success"=>false,"code"=>2,"message"=>"Incorrect password"]);
