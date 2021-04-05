@@ -11,7 +11,12 @@ class MenuController extends Controller
 {
     public function read(Request $request)
     {
-        $results = app('App\Http\Controllers\PermisoController')->getPermisos($request->user);
+        $result = $this->getMenu($request->user);
+        return parent::response(true,$result);
+    }
+
+    public function getMenu($user) {
+        $results = app('App\Http\Controllers\PermisoController')->getPermisos($user);
 
         $menu = "";
         $primero = true;
@@ -31,8 +36,7 @@ class MenuController extends Controller
             }
         }
 
-        $result[] = array("id"=>$id_menu, "label"=>$menu,"options"=>$options);
-
-        return parent::response(true,$result);
+        $result[] = array("id"=>$id_menu, "label"=>$menu,"options"=>$options); 
+        return $result;       
     }
 }
