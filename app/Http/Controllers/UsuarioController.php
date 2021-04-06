@@ -80,7 +80,7 @@ class UsuarioController extends Controller
             $usuario = Usuario::where('user', $request->input('user'))->first();
             if ($usuario) {
                 if (md5($request->input('pass')) == $usuario->pass) {
-                    $token = $this->getToken();
+                    $token = $this->getToken($usuario->id,$usuario->user);
                     $menu = app('App\Http\Controllers\MenuController')->getMenu($usuario->user);
                     return response()->json(["success"=>true,"code"=>0,"message"=>"User logged in","name"=>$usuario->name,"token"=>$token,"menu"=>$menu]);
                 }
@@ -94,7 +94,7 @@ class UsuarioController extends Controller
         //}
     }
 
-    private function getToken() {
+    private function getToken($id,$user) {
         $time = time();
         $key = env('APP_KEY'); //'my_secret_key';
 
@@ -102,8 +102,8 @@ class UsuarioController extends Controller
             'iat' => $time, // Tiempo que inició el token
             'exp' => $time + env('TOKEN_EXP'), // Tiempo que expirará el token
             'data' => [ // información del usuario
-                'id' => 1,
-                'name' => 'Juanqui'
+                'id' => $id,
+                'name' => $user
             ]
         );
         
