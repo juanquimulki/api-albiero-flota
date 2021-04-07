@@ -13,3 +13,5 @@ $router->options('/usuario[/{timestamp}]', function() { return "OPTIONS"; });
 $router->get('/permiso', ['middleware' => 'auth', 'uses' => 'PermisoController@read']);
 $router->options('/permiso', function() { return "OPTIONS"; });
 
+$router->get('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@read']);
+$router->options('/chofer', function() { return "OPTIONS"; });
