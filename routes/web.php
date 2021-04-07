@@ -13,5 +13,8 @@ $router->options('/usuario[/{timestamp}]', function() { return "OPTIONS"; });
 $router->get('/permiso', ['middleware' => 'auth', 'uses' => 'PermisoController@read']);
 $router->options('/permiso', function() { return "OPTIONS"; });
 
+$router->post('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@create']);
 $router->get('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@read']);
+$router->patch('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@update']);
+$router->delete('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@delete']);
 $router->options('/chofer', function() { return "OPTIONS"; });
