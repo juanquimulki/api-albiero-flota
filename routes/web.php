@@ -8,6 +8,7 @@ $router->get('/usuario', ['middleware' => 'auth', 'uses' => 'UsuarioController@r
 $router->get('/usuario/login[/{timestamp}]', ['uses' => 'UsuarioController@login']);
 $router->patch('/usuario', ['middleware' => 'auth', 'uses' => 'UsuarioController@update']);
 $router->delete('/usuario', ['middleware' => 'auth', 'uses' => 'UsuarioController@delete']);
+$router->patch('/usuario/clave', ['middleware' => 'auth', 'uses' => 'UsuarioController@clave']);
 $router->options('/usuario[/{timestamp}]', function() { return "OPTIONS"; });
 
 $router->get('/permiso', ['middleware' => 'auth', 'uses' => 'PermisoController@read']);
