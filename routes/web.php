@@ -19,3 +19,6 @@ $router->get('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@rea
 $router->patch('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@update']);
 $router->delete('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@delete']);
 $router->options('/chofer', function() { return "OPTIONS"; });
+
+$router->get('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoController@read']);
+$router->options('/vehiculo', function() { return "OPTIONS"; });
