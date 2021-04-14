@@ -22,3 +22,6 @@ $router->options('/chofer', function() { return "OPTIONS"; });
 
 $router->get('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoController@read']);
 $router->options('/vehiculo', function() { return "OPTIONS"; });
+
+$router->get('/vehiculotipo', ['middleware' => 'auth', 'uses' => 'VehiculoTipoController@read']);
+$router->options('/vehiculotipo', function() { return "OPTIONS"; });
