@@ -20,7 +20,10 @@ $router->patch('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@u
 $router->delete('/chofer', ['middleware' => 'auth', 'uses' => 'ChoferController@delete']);
 $router->options('/chofer', function() { return "OPTIONS"; });
 
+$router->post('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoController@create']);
 $router->get('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoController@read']);
+$router->patch('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoController@update']);
+$router->delete('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoController@delete']);
 $router->options('/vehiculo', function() { return "OPTIONS"; });
 
 $router->get('/vehiculotipo', ['middleware' => 'auth', 'uses' => 'VehiculoTipoController@read']);
