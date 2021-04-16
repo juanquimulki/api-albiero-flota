@@ -27,7 +27,7 @@ class VehiculoController extends Controller
     
     public function read(Request $request)
     {
-        $results = \App\Vehiculo::all();
+        $results = \App\Vehiculo::with("tipo")->with("chofer")->get();
         return parent::response(true,$results);
     }
 
