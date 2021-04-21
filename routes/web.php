@@ -31,3 +31,6 @@ $router->options('/vehiculotipo', function() { return "OPTIONS"; });
 
 $router->get('/reporte/garantiafecha', ['middleware' => 'auth', 'uses' => 'ReporteController@garantiaFecha']);
 $router->options('/reporte[/{reporte}]', function() { return "OPTIONS"; });
+
+$router->post('/log', ['uses' => 'LogController@create']);
+$router->options('/log', function() { return "OPTIONS"; });
