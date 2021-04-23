@@ -17,6 +17,7 @@ class VehiculoController extends Controller
         $vehiculo->descripcion = $request->descripcion;
         $vehiculo->alias = $request->alias;
         $vehiculo->patente = strtoupper($request->patente);
+        $vehiculo->id_tipo_comb = $request->id_tipo_comb;
         $vehiculo->anio = $request->anio;
         $vehiculo->id_chofer = $request->id_chofer;
         $vehiculo->fecha_venc_gtia = $request->fecha_venc_gtia;
@@ -39,6 +40,7 @@ class VehiculoController extends Controller
         $vehiculo->descripcion = $request->descripcion;
         $vehiculo->alias = $request->alias;
         $vehiculo->patente = strtoupper($request->patente);
+        $vehiculo->id_tipo_comb = $request->id_tipo_comb;
         $vehiculo->anio = $request->anio;
         $vehiculo->id_chofer = $request->id_chofer;
         $vehiculo->fecha_venc_gtia = $request->fecha_venc_gtia;

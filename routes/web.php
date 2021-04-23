@@ -29,6 +29,9 @@ $router->options('/vehiculo', function() { return "OPTIONS"; });
 $router->get('/vehiculotipo', ['middleware' => 'auth', 'uses' => 'VehiculoTipoController@read']);
 $router->options('/vehiculotipo', function() { return "OPTIONS"; });
 
+$router->get('/combustibletipo', ['middleware' => 'auth', 'uses' => 'CombustibleTipoController@read']);
+$router->options('/combustibletipo', function() { return "OPTIONS"; });
+
 $router->get('/reporte/garantiafecha', ['middleware' => 'auth', 'uses' => 'ReporteController@garantiaFecha']);
 $router->options('/reporte[/{reporte}]', function() { return "OPTIONS"; });
 
