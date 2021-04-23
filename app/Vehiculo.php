@@ -10,7 +10,7 @@ class Vehiculo extends Model
     use SoftDeletes;
 
     protected $table  = 'vehiculos';
-    protected $appends = ['dias_venc_gtia'];
+    protected $appends = ['dias_venc_gtia','descripcion_alias'];
 
     public function getDiasVencGtiaAttribute()
     {
@@ -21,6 +21,11 @@ class Vehiculo extends Model
         $interval = date_diff($origin, $target);
 
         return $interval->days;
+    }    
+
+    public function getDescripcionAliasAttribute()
+    {
+        return $this->descripcion . " (".$this->alias.")";
     }    
 
     public function tipo() {
