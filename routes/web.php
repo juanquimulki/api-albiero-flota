@@ -35,8 +35,12 @@ $router->options('/combustibletipo', function() { return "OPTIONS"; });
 $router->get('/reporte/garantiafecha', ['middleware' => 'auth', 'uses' => 'ReporteController@garantiaFecha']);
 $router->options('/reporte[/{reporte}]', function() { return "OPTIONS"; });
 
+$router->post('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeController@create']);
 $router->get('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeController@read']);
+$router->patch('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeController@update']);
+$router->delete('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeController@delete']);
 $router->options('/kilometraje', function() { return "OPTIONS"; });
 
 $router->post('/log', ['uses' => 'LogController@create']);
+$router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });

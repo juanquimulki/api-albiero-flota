@@ -9,9 +9,39 @@ use Illuminate\Http\Request;
 
 class KilometrajeController extends Controller
 {
+    public function create(Request $request)
+    {
+        $kilometraje = new Kilometraje;
+
+        $kilometraje->id_vehiculo = $request->id_vehiculo;
+        $kilometraje->fecha_hora = $request->fecha_hora;
+        $kilometraje->kilometros = $request->kilometros;
+        $save = $kilometraje->save();
+
+        return parent::response($save,null);
+    }
+
     public function read(Request $request)
     {
         $results = \App\Kilometraje::with("vehiculo")->get();
         return parent::response(true,$results);
     }
+
+    public function update(Request $request)
+    {
+        $kilometraje = \App\Kilometraje::find($request->id);
+
+        $kilometraje->id_vehiculo = $request->id_vehiculo;
+        $kilometraje->fecha_hora = $request->fecha_hora;
+        $kilometraje->kilometros = $request->kilometros;
+        $save = $kilometraje->save();
+
+        return parent::response($save,null);
+    }
+
+    public function delete(Request $request)
+    {
+        $destroy = \App\Kilometraje::destroy($request->id);
+        return parent::response($destroy,null);
+    }    
 }
