@@ -11,6 +11,8 @@
   </Connection>
   <Settings>
     <DbDiagramOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <EnableComments>false</EnableComments>
+      <FieldDetails>NameAndFullType</FieldDetails>
       <CustomProperties />
     </DbDiagramOptions>
     <Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PageOptions">
@@ -52,8 +54,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>257 px</X>
-              <Y>40 px</Y>
+              <X>278 px</X>
+              <Y>205 px</Y>
             </Location>
             <Size>
               <Width>214 px</Width>
@@ -75,8 +77,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>40 px</X>
-              <Y>118 px</Y>
+              <X>307 px</X>
+              <Y>40 px</Y>
             </Location>
             <Size>
               <Width>158 px</Width>
@@ -98,8 +100,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>529 px</X>
-              <Y>82 px</Y>
+              <X>551 px</X>
+              <Y>256 px</Y>
             </Location>
             <Size>
               <Width>185 px</Width>
@@ -128,8 +130,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>213.675 px</X>
-                  <Y>131.075 px</Y>
+                  <X>214.075 px</X>
+                  <Y>131.925 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
@@ -140,8 +142,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0.524999999999977 px</X>
-                  <Y>80.5678370786517 px</Y>
+                  <X>-0.0750000000000455 px</X>
+                  <Y>80.925 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -151,16 +153,6 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>491 px</X>
-                <Y>171.074996948242 px</Y>
-              </PointD>
-              <PointD>
-                <X>491 px</X>
-                <Y>162.567840576172 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>`albiero-flota`.vehiculos.FK_vehiculos_choferes_id</Path>
@@ -177,8 +169,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-39 px</X>
-                  <Y>8.50715942382814 px</Y>
+                  <X>-29.5 px</X>
+                  <Y>1.22070312613687E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
@@ -207,11 +199,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-0.324999999999989 px</X>
-                  <Y>131.075 px</Y>
+                  <X>107.075 px</X>
+                  <Y>0.849999999999994 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>11</OID>
                   <PortType>FloatAnchor</PortType>
@@ -219,11 +211,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>157.825 px</X>
-                  <Y>53.075 px</Y>
+                  <X>78.075 px</X>
+                  <Y>107 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>12</OID>
                   <PortType>FloatAnchor</PortType>
@@ -246,13 +238,197 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
+                  <X>-1.22070312613687E-05 px</X>
+                  <Y>29 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>13</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>14</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>41 px</X>
+              <Y>283 px</Y>
+            </Location>
+            <Size>
+              <Width>178 px</Width>
+              <Height>107 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`albiero-flota`.combustible_tipos</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>15</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>294 px</X>
+              <Y>527 px</Y>
+            </Location>
+            <Size>
+              <Width>184 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`albiero-flota`.kilometraje</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>16</OID>
+              <Comment>17</Comment>
+              <OutModel>15</OutModel>
+              <InModel>1</InModel>
+              <OutPort>18</OutPort>
+              <InPort>19</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>92 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>18</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>108 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>19</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`albiero-flota`.kilometraje.FK_kilometraje_vehiculos_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>17</OID>
+              <HolderModel>16</HolderModel>
+              <Port>20</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>29.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>20</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>21</OID>
+              <Comment>22</Comment>
+              <OutModel>1</OutModel>
+              <InModel>14</InModel>
+              <OutPort>23</OutPort>
+              <InPort>24</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>131.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>23</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>53.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>24</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`albiero-flota`.vehiculos.FK_vehiculos_combustible_tipos_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>22</OID>
+              <HolderModel>21</HolderModel>
+              <Port>25</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
                   <X>29.5 px</X>
-                  <Y>3.05175782955303E-06 px</Y>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>13</OID>
+                  <OID>25</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -268,8 +444,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>1</Scale>
           <Location>
-            <X>-356.480010986328 px</X>
-            <Y>-232.5 px</Y>
+            <X>-343.388214111328 px</X>
+            <Y>-48.5 px</Y>
           </Location>
         </ViewPort>
       </Model>
