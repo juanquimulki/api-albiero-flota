@@ -41,6 +41,12 @@ $router->patch('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeCo
 $router->delete('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeController@delete']);
 $router->options('/kilometraje', function() { return "OPTIONS"; });
 
+$router->post('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@create']);
+$router->get('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@read']);
+$router->patch('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@update']);
+$router->delete('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@delete']);
+$router->options('/parte', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });
