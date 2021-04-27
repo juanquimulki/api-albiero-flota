@@ -47,6 +47,12 @@ $router->patch('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@upd
 $router->delete('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@delete']);
 $router->options('/parte', function() { return "OPTIONS"; });
 
+$router->post('/tarea', ['middleware' => 'auth', 'uses' => 'TareaController@create']);
+$router->get('/tarea', ['middleware' => 'auth', 'uses' => 'TareaController@read']);
+$router->patch('/tarea', ['middleware' => 'auth', 'uses' => 'TareaController@update']);
+$router->delete('/tarea', ['middleware' => 'auth', 'uses' => 'TareaController@delete']);
+$router->options('/tarea', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });
