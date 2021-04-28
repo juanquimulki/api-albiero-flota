@@ -21,7 +21,7 @@ class TareaController extends Controller
 
     public function read(Request $request)
     {
-        $results = \App\Tarea::all();
+        $results = \App\Tarea::orderBy("id","desc")->get();
         return parent::response(true,$results);
     }
 
