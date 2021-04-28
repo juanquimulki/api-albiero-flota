@@ -23,7 +23,7 @@ class KilometrajeController extends Controller
 
     public function read(Request $request)
     {
-        $results = \App\Kilometraje::with("vehiculo")->get();
+        $results = \App\Kilometraje::with("vehiculo")->orderBy("id","desc")->get();
         return parent::response(true,$results);
     }
 
