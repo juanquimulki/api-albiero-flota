@@ -44,4 +44,10 @@ class KilometrajeController extends Controller
         $destroy = \App\Kilometraje::destroy($request->id);
         return parent::response($destroy,null);
     }    
+
+    public function vehiculo(Request $request)
+    {
+        $result = DB::table('vw_vehiculos_km')->where("id_vehiculo","=",$request->id_vehiculo)->get();
+        return parent::response(true,$result);
+    }    
 }

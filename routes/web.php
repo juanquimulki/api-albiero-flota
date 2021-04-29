@@ -40,6 +40,8 @@ $router->get('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeCont
 $router->patch('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeController@update']);
 $router->delete('/kilometraje', ['middleware' => 'auth', 'uses' => 'KilometrajeController@delete']);
 $router->options('/kilometraje', function() { return "OPTIONS"; });
+$router->get('/kilometraje/vehiculo', ['middleware' => 'auth', 'uses' => 'KilometrajeController@vehiculo']);
+$router->options('/kilometraje/vehiculo', function() { return "OPTIONS"; });
 
 $router->post('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@create']);
 $router->get('/parte', ['middleware' => 'auth', 'uses' => 'ParteController@read']);
