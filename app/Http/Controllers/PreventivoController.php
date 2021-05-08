@@ -18,6 +18,12 @@ class PreventivoController extends Controller
         $preventivo->id_tarea = $request->id_tarea;
         $preventivo->detalles = $request->detalles;
 
+        $preventivo->recurrente = $request->recurrente;
+        $preventivo->fecha = $request->fecha;
+        $preventivo->kilometros = $request->kilometros;
+        $preventivo->frecuenciaDias = $request->frecuenciaDias;
+        $preventivo->frecuenciaKms = $request->frecuenciaKms;
+
         $save = $preventivo->save();
 
         return parent::response($save,null);
@@ -41,6 +47,12 @@ class PreventivoController extends Controller
         $preventivo->id_parte = $request->id_parte;
         $preventivo->id_tarea = $request->id_tarea;
         $preventivo->detalles = $request->detalles;
+
+        $preventivo->recurrente = $request->recurrente;
+        $preventivo->fecha = $request->fecha;
+        $preventivo->kilometros = $request->kilometros;
+        $preventivo->frecuenciaDias = $request->frecuenciaDias;
+        $preventivo->frecuenciaKms = $request->frecuenciaKms;
 
         $save = $preventivo->save();
 
