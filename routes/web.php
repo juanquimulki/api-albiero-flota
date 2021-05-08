@@ -55,6 +55,12 @@ $router->patch('/tarea', ['middleware' => 'auth', 'uses' => 'TareaController@upd
 $router->delete('/tarea', ['middleware' => 'auth', 'uses' => 'TareaController@delete']);
 $router->options('/tarea', function() { return "OPTIONS"; });
 
+$router->post('/preventivo', ['middleware' => 'auth', 'uses' => 'PreventivoController@create']);
+$router->get('/preventivo', ['middleware' => 'auth', 'uses' => 'PreventivoController@read']);
+$router->patch('/preventivo', ['middleware' => 'auth', 'uses' => 'PreventivoController@update']);
+$router->delete('/preventivo', ['middleware' => 'auth', 'uses' => 'PreventivoController@delete']);
+$router->options('/preventivo', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });
