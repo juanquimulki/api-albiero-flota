@@ -19,6 +19,8 @@ class PreventivoController extends Controller
         $preventivo->detalles = $request->detalles;
         $preventivo->frecuenciaDias = $request->frecuenciaDias;
         $preventivo->frecuenciaKms = $request->frecuenciaKms;
+        $preventivo->ultimaFecha = $request->ultimaFecha;
+        $preventivo->ultimoKms = $request->ultimoKms;
 
         $save = $preventivo->save();
 
@@ -45,6 +47,8 @@ class PreventivoController extends Controller
         $preventivo->detalles = $request->detalles;
         $preventivo->frecuenciaDias = $request->frecuenciaDias;
         $preventivo->frecuenciaKms = $request->frecuenciaKms;
+        $preventivo->ultimaFecha = $request->ultimaFecha;
+        $preventivo->ultimoKms = $request->ultimoKms;
 
         $save = $preventivo->save();
 
