@@ -60,4 +60,37 @@ class PreventivoController extends Controller
         $destroy = \App\Preventivo::destroy($request->id);
         return parent::response($destroy,null);
     }
+
+    public function agendaFecha(Request $request)
+    {
+        $results = \App\Preventivo::
+            select('descripcion','alias','parte','tarea','detalles','frecuenciaDias','ultimaFecha')            
+            ->selectRaw('concat(descripcion," ","(",alias,")") as descripcion_alias') 
+            ->selectRaw('datediff(?,ultimaFecha)-frecuenciaDias as vencimiento',[$request->fecha])
+            ->join('vehiculos', 'preventivo.id_vehiculo', '=', 'vehiculos.id')
+            ->join('partes', 'preventivo.id_parte', '=', 'partes.id')
+            ->join('tareas', 'preventivo.id_tarea', '=', 'tareas.id')
+            ->whereRaw("datediff(?,ultimaFecha)>=frecuenciaDias",[$request->fecha])
+            ->orderBy('vencimiento','desc')
+            ->orderBy('frecuenciaDias','asc')                         
+            ->get();
+        return parent::response(true,$results);
+    }
+
+    public function agendaKilometros(Request $request)
+    {
+        $results = \App\Preventivo::
+            select('descripcion','alias','parte','tarea','detalles','kilometros','fecha_hora','frecuenciaKms','ultimoKms')            
+            ->selectRaw('concat(descripcion," ","(",alias,")") as descripcion_alias') 
+            ->selectRaw('kilometros-(ultimoKms+frecuenciaKms) as vencimiento')
+            ->join('vehiculos', 'preventivo.id_vehiculo', '=', 'vehiculos.id')
+            ->join('partes', 'preventivo.id_parte', '=', 'partes.id')
+            ->join('tareas', 'preventivo.id_tarea', '=', 'tareas.id')
+            ->join('vw_vehiculos_km', 'vehiculos.id', '=', 'vw_vehiculos_km.id_vehiculo')
+            ->whereRaw("kilometros-(ultimoKms+frecuenciaKms) >= ?*(-1)",[$request->kilometros])
+            ->orderBy('vencimiento','desc')
+            ->orderBy('frecuenciaDias','asc')                         
+            ->get();
+        return parent::response(true,$results);
+    }
 }

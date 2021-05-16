@@ -61,6 +61,11 @@ $router->patch('/preventivo', ['middleware' => 'auth', 'uses' => 'PreventivoCont
 $router->delete('/preventivo', ['middleware' => 'auth', 'uses' => 'PreventivoController@delete']);
 $router->options('/preventivo', function() { return "OPTIONS"; });
 
+$router->get('/preventivo/agenda/fecha', ['middleware' => 'auth', 'uses' => 'PreventivoController@agendaFecha']);
+$router->options('/preventivo/agenda/fecha', function() { return "OPTIONS"; });
+$router->get('/preventivo/agenda/kilometros', ['middleware' => 'auth', 'uses' => 'PreventivoController@agendaKilometros']);
+$router->options('/preventivo/agenda/kilometros', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });
