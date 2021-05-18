@@ -64,7 +64,7 @@ class PreventivoController extends Controller
     public function agendaFecha(Request $request)
     {
         $results = \App\Preventivo::
-            select('descripcion','alias','parte','tarea','detalles','frecuenciaDias','ultimaFecha')            
+            select('preventivo.id','descripcion','alias','parte','tarea','detalles','frecuenciaDias','ultimaFecha')            
             ->selectRaw('concat(descripcion," ","(",alias,")") as descripcion_alias') 
             ->selectRaw('datediff(?,ultimaFecha)-frecuenciaDias as vencimiento',[$request->fecha])
             ->join('vehiculos', 'preventivo.id_vehiculo', '=', 'vehiculos.id')
@@ -80,7 +80,7 @@ class PreventivoController extends Controller
     public function agendaKilometros(Request $request)
     {
         $results = \App\Preventivo::
-            select('descripcion','alias','parte','tarea','detalles','kilometros','fecha_hora','frecuenciaKms','ultimoKms')            
+            select('preventivo.id','descripcion','alias','parte','tarea','detalles','kilometros','fecha_hora','frecuenciaKms','ultimoKms')            
             ->selectRaw('concat(descripcion," ","(",alias,")") as descripcion_alias') 
             ->selectRaw('kilometros-(ultimoKms+frecuenciaKms) as vencimiento')
             ->join('vehiculos', 'preventivo.id_vehiculo', '=', 'vehiculos.id')
