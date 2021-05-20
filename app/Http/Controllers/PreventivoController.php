@@ -86,7 +86,7 @@ class PreventivoController extends Controller
             ->join('vehiculos', 'preventivo.id_vehiculo', '=', 'vehiculos.id')
             ->join('partes', 'preventivo.id_parte', '=', 'partes.id')
             ->join('tareas', 'preventivo.id_tarea', '=', 'tareas.id')
-            ->join('vw_vehiculos_km', 'vehiculos.id', '=', 'vw_vehiculos_km.id_vehiculo')
+            ->leftJoin('vw_vehiculos_km', 'vehiculos.id', '=', 'vw_vehiculos_km.id_vehiculo')
             ->whereRaw("kilometros-(ultimoKms+frecuenciaKms) >= ?*(-1)",[$request->kilometros])
             ->orderBy('vencimiento','desc')
             ->orderBy('frecuenciaDias','asc')                         

@@ -75,6 +75,9 @@ $router->patch('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoCont
 $router->delete('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@delete']);
 $router->options('/correctivo', function() { return "OPTIONS"; });
 
+$router->get('/correctivo/agenda', ['middleware' => 'auth', 'uses' => 'CorrectivoController@agenda']);
+$router->options('/correctivo/agenda', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });

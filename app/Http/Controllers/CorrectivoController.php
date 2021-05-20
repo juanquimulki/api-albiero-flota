@@ -56,4 +56,21 @@ class CorrectivoController extends Controller
         $destroy = \App\Correctivo::destroy($request->id);
         return parent::response($destroy,null);
     }
+
+    public function agenda(Request $request)
+    {
+        $results = \App\Correctivo::
+            select('correctivo.id','descripcion','alias','parte','tarea','detalles','fecha','correctivo.kilometros')            
+            ->selectRaw('concat(descripcion," ","(",alias,")") as descripcion_alias') 
+            ->selectRaw('datediff(?,fecha) as vencimientoDias',[date("Y-m-d")])
+            ->selectRaw('vw_vehiculos_km.kilometros-correctivo.kilometros as vencimientoKms')
+            ->join('vehiculos', 'correctivo.id_vehiculo', '=', 'vehiculos.id')
+            ->join('partes', 'correctivo.id_parte', '=', 'partes.id')
+            ->join('tareas', 'correctivo.id_tarea', '=', 'tareas.id')
+            ->leftJoin('vw_vehiculos_km', 'vehiculos.id', '=', 'vw_vehiculos_km.id_vehiculo')
+            ->orderBy('vencimientoDias','desc')
+            ->get();
+
+        return parent::response(true,$results);
+    }    
 }
