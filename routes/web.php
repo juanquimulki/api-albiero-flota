@@ -69,6 +69,12 @@ $router->options('/preventivo/agenda/kilometros', function() { return "OPTIONS";
 $router->post('/preventivo/tarea', ['middleware' => 'auth', 'uses' => 'PreventivoTareaController@create']);
 $router->options('/preventivo/tarea', function() { return "OPTIONS"; });
 
+$router->post('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@create']);
+$router->get('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@read']);
+$router->patch('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@update']);
+$router->delete('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@delete']);
+$router->options('/correctivo', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });
