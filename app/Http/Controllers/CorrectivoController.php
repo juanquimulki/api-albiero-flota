@@ -69,6 +69,7 @@ class CorrectivoController extends Controller
             ->join('tareas', 'correctivo.id_tarea', '=', 'tareas.id')
             ->leftJoin('vw_vehiculos_km', 'vehiculos.id', '=', 'vw_vehiculos_km.id_vehiculo')
             ->orderBy('vencimientoDias','desc')
+            ->whereRaw("cumplimentado is NULL")
             ->get();
 
         return parent::response(true,$results);
