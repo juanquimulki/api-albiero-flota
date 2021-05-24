@@ -54,8 +54,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>278 px</X>
-              <Y>205 px</Y>
+              <X>341 px</X>
+              <Y>259 px</Y>
             </Location>
             <Size>
               <Width>214 px</Width>
@@ -77,8 +77,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>307 px</X>
-              <Y>40 px</Y>
+              <X>278 px</X>
+              <Y>94 px</Y>
             </Location>
             <Size>
               <Width>158 px</Width>
@@ -100,8 +100,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>551 px</X>
-              <Y>256 px</Y>
+              <X>572 px</X>
+              <Y>40 px</Y>
             </Location>
             <Size>
               <Width>185 px</Width>
@@ -130,11 +130,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>214.075 px</X>
-                  <Y>131.925 px</Y>
+                  <X>172.475 px</X>
+                  <Y>0.350000000000023 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>6</OID>
                   <PortType>FloatAnchor</PortType>
@@ -142,8 +142,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>-0.0750000000000455 px</X>
-                  <Y>80.925 px</Y>
+                  <X>0.325000000000045 px</X>
+                  <Y>80.25 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -153,6 +153,12 @@
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>513.475 px</X>
+                <Y>120.25 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>`albiero-flota`.vehiculos.FK_vehiculos_choferes_id</Path>
@@ -169,11 +175,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-29.5 px</X>
-                  <Y>1.22070312613687E-05 px</Y>
+                  <X>2.44140625227374E-05 px</X>
+                  <Y>69.375 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Right</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>8</OID>
                   <PortType>FixedAnchor</PortType>
@@ -199,8 +205,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>107.075 px</X>
-                  <Y>0.849999999999994 px</Y>
+                  <X>14.65 px</X>
+                  <Y>0.350000000000023 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
@@ -211,8 +217,8 @@
               </Port>
               <Port>
                 <Location>
-                  <X>78.075 px</X>
-                  <Y>107 px</Y>
+                  <X>77.65 px</X>
+                  <Y>106.5 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
@@ -238,7 +244,7 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-1.22070312613687E-05 px</X>
+                  <X>6.10351560226263E-06 px</X>
                   <Y>29 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
@@ -261,8 +267,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>41 px</X>
-              <Y>283 px</Y>
+              <X>359 px</X>
+              <Y>580 px</Y>
             </Location>
             <Size>
               <Width>178 px</Width>
@@ -284,8 +290,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>294 px</X>
-              <Y>527 px</Y>
+              <X>40 px</X>
+              <Y>292 px</Y>
             </Location>
             <Size>
               <Width>184 px</Width>
@@ -314,11 +320,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>92 px</X>
-                  <Y>0 px</Y>
+                  <X>184.575 px</X>
+                  <Y>98.4250000000001 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>18</OID>
                   <PortType>FloatAnchor</PortType>
@@ -326,11 +332,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>108 px</X>
-                  <Y>0 px</Y>
+                  <X>1.27499999999998 px</X>
+                  <Y>131.425 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>19</OID>
                   <PortType>FloatAnchor</PortType>
@@ -353,11 +359,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>0 px</X>
-                  <Y>29.5 px</Y>
+                  <X>-58.5 px</X>
+                  <Y>1.22070313182121E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>20</OID>
                   <PortType>FixedAnchor</PortType>
@@ -383,11 +389,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>131.5 px</Y>
+                  <X>108.275 px</X>
+                  <Y>262.5 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>23</OID>
                   <PortType>FloatAnchor</PortType>
@@ -395,11 +401,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>53.5 px</Y>
+                  <X>90.275 px</X>
+                  <Y>0.350000000000023 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>24</OID>
                   <PortType>FloatAnchor</PortType>
@@ -422,13 +428,381 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>29.5 px</X>
-                  <Y>0 px</Y>
+                  <X>6.10351560226263E-06 px</X>
+                  <Y>-29 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>25</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>26</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>613 px</X>
+              <Y>460 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>280 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`albiero-flota`.preventivo</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>27</OID>
+              <Comment>28</Comment>
+              <OutModel>26</OutModel>
+              <InModel>1</InModel>
+              <OutPort>29</OutPort>
+              <InPort>30</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>-0.549999999999955 px</X>
+                  <Y>50.8000000000001 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>29</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>212.6 px</X>
+                  <Y>251.8 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>30</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`albiero-flota`.preventivo.FK_preventivo_vehiculos_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>28</OID>
+              <HolderModel>27</HolderModel>
+              <Port>31</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>29 px</X>
+                  <Y>1.22070313182121E-05 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>25</OID>
+                  <OID>31</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>32</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>883 px</X>
+              <Y>476 px</Y>
+            </Location>
+            <Size>
+              <Width>229 px</Width>
+              <Height>246 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`albiero-flota`.preventivo_tareas</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>33</OID>
+              <Comment>34</Comment>
+              <OutModel>32</OutModel>
+              <InModel>26</InModel>
+              <OutPort>35</OutPort>
+              <InPort>36</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>-0.375 px</X>
+                  <Y>123.075 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>35</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>210.775 px</X>
+                  <Y>139.075 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>36</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`albiero-flota`.preventivo_tareas.FK_preventivo_tareas_preventivo_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>34</OID>
+              <HolderModel>33</HolderModel>
+              <Port>37</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>30 px</X>
+                  <Y>-1.22070312045253E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>37</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>38</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>815 px</X>
+              <Y>139 px</Y>
+            </Location>
+            <Size>
+              <Width>215 px</Width>
+              <Height>263 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`albiero-flota`.correctivo</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>39</OID>
+              <Comment>40</Comment>
+              <OutModel>38</OutModel>
+              <InModel>1</InModel>
+              <OutPort>41</OutPort>
+              <InPort>42</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0.75 px</X>
+                  <Y>131.05 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>41</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>212.6 px</X>
+                  <Y>11.05 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>42</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`albiero-flota`.correctivo.FK_correctivo_vehiculos_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>40</OID>
+              <HolderModel>39</HolderModel>
+              <Port>43</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>130 px</X>
+                  <Y>1.22070312613687E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>43</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>44</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1089 px</X>
+              <Y>147 px</Y>
+            </Location>
+            <Size>
+              <Width>229 px</Width>
+              <Height>246 px</Height>
+            </Size>
+            <DbOid>
+              <Path>`albiero-flota`.correctivo_tareas</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>45</OID>
+              <Comment>46</Comment>
+              <OutModel>44</OutModel>
+              <InModel>38</InModel>
+              <OutPort>47</OutPort>
+              <InPort>48</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>-0.400000000000091 px</X>
+                  <Y>123.05 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>47</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>214.75 px</X>
+                  <Y>131.05 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>48</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>`albiero-flota`.correctivo_tareas.FK_correctivo_tareas_correctivo_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>46</OID>
+              <HolderModel>45</HolderModel>
+              <Port>49</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>29.5 px</X>
+                  <Y>1.22070312613687E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>49</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -444,8 +818,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>1</Scale>
           <Location>
-            <X>-343.388214111328 px</X>
-            <Y>-48.5 px</Y>
+            <X>-52 px</X>
+            <Y>-14 px</Y>
           </Location>
         </ViewPort>
       </Model>
