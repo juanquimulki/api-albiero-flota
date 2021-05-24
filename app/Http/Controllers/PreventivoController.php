@@ -82,12 +82,13 @@ class PreventivoController extends Controller
         $results = \App\Preventivo::
             select('preventivo.id','descripcion','alias','parte','tarea','detalles','kilometros','fecha_hora','frecuenciaKms','ultimoKms')            
             ->selectRaw('concat(descripcion," ","(",alias,")") as descripcion_alias') 
-            ->selectRaw('kilometros-(ultimoKms+frecuenciaKms) as vencimiento')
+            ->selectRaw('kilometros+? as kmsCalculados',[$request->kilometros])
+            ->selectRaw('(kilometros+?)-(ultimoKms+frecuenciaKms) as vencimiento',[$request->kilometros])
             ->join('vehiculos', 'preventivo.id_vehiculo', '=', 'vehiculos.id')
             ->join('partes', 'preventivo.id_parte', '=', 'partes.id')
             ->join('tareas', 'preventivo.id_tarea', '=', 'tareas.id')
             ->leftJoin('vw_vehiculos_km', 'vehiculos.id', '=', 'vw_vehiculos_km.id_vehiculo')
-            ->whereRaw("kilometros-(ultimoKms+frecuenciaKms) >= ?*(-1)",[$request->kilometros])
+            ->whereRaw("(kilometros+?)-(ultimoKms+frecuenciaKms) >= 0",[$request->kilometros])
             ->orderBy('vencimiento','desc')
             ->orderBy('frecuenciaDias','asc')                         
             ->get();
