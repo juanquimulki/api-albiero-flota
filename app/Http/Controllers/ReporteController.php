@@ -36,4 +36,29 @@ class ReporteController extends Controller
                             ->get();
         return parent::response(true,$results);
     }
+
+    public function garantiaKms(Request $request)
+    {
+        $results = Vehiculo::whereRaw('(kilometros+?)-kms_venc_gtia >= 0',[$request->kilometros])
+                            ->join('vehiculos_tipos', 'vehiculos.id_tipo', '=', 'vehiculos_tipos.id')
+                            ->join('choferes', 'vehiculos.id_chofer', '=', 'choferes.id')
+                            ->leftJoin('vw_vehiculos_km', 'vehiculos.id', '=', 'vw_vehiculos_km.id_vehiculo')
+                            ->select(
+                                'vehiculos.id',
+                                'descripcion',
+                                'alias',
+                                'patente',
+                                'anio',
+                                'kms_venc_gtia',
+                                'vehiculos_tipos.tipo',
+                                'choferes.apenom',
+                                'kilometros',
+                                'fecha_hora'
+                                )                
+                            ->selectRaw('kilometros+? as kmsCalculados',[$request->kilometros])
+                            ->selectRaw('(kilometros+?)-kms_venc_gtia as vencimiento',[$request->kilometros])
+                            ->orderBy('vencimiento','desc')                                           
+                            ->get();
+        return parent::response(true,$results);
+    }
 }

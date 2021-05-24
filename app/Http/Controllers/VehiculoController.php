@@ -21,6 +21,7 @@ class VehiculoController extends Controller
         $vehiculo->anio = $request->anio;
         $vehiculo->id_chofer = $request->id_chofer;
         $vehiculo->fecha_venc_gtia = $request->fecha_venc_gtia;
+        $vehiculo->kms_venc_gtia = $request->kms_venc_gtia;
         $save = $vehiculo->save();
 
         return parent::response($save,null);
@@ -44,6 +45,7 @@ class VehiculoController extends Controller
         $vehiculo->anio = $request->anio;
         $vehiculo->id_chofer = $request->id_chofer;
         $vehiculo->fecha_venc_gtia = $request->fecha_venc_gtia;
+        $vehiculo->kms_venc_gtia = $request->kms_venc_gtia;
         $save = $vehiculo->save();
 
         return parent::response($save,null);
