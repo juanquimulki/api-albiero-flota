@@ -61,4 +61,12 @@ class ReporteController extends Controller
                             ->get();
         return parent::response(true,$results);
     }
+
+    public function historial(Request $request)
+    {
+        $results = DB::table('vw_historial')
+                        //->whereRaw('id_vehiculo = ?  and fecha BETWEEN ? and ?',[$request->id_vehiculo,$request->desde,$request->hasta])
+                        ->get();
+        return parent::response(true,$results);
+    }
 }
