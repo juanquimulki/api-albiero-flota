@@ -25,7 +25,7 @@ class Vehiculo extends Model
 
     public function getDescripcionAliasAttribute()
     {
-        return $this->descripcion . " (".$this->alias.")";
+        return $this->descripcion . ($this->alias ? " (".$this->alias.")" : "");
     }    
 
     public function tipo() {
