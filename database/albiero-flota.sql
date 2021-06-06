@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2021 a las 18:27:40
+-- Tiempo de generación: 06-06-2021 a las 19:28:23
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.4
 
@@ -94,7 +94,8 @@ CREATE TABLE `correctivo` (
 
 INSERT INTO `correctivo` (`id`, `id_vehiculo`, `id_parte`, `id_tarea`, `detalles`, `fecha`, `kilometros`, `cumplimentado`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 9, 4, 3, 'se rompio el asdasdads asdfsadf', '2021-05-07', 123455, NULL, '2021-05-20 21:20:18', '2021-05-20 21:21:09', '2021-05-20 21:21:09'),
-(2, 10, 3, 1, 'se rompio la moto', '2021-05-21', 123123, 0, '2021-05-20 21:21:05', '2021-05-22 16:18:20', NULL);
+(2, 10, 3, 1, 'se rompio la moto', '2021-05-21', 123123, 0, '2021-05-20 21:21:05', '2021-05-22 16:18:20', NULL),
+(3, 11, 4, 3, 'sdfasdf', '2021-05-25', 1234, NULL, '2021-05-25 15:34:41', '2021-05-25 15:34:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,8 @@ INSERT INTO `kilometraje` (`id`, `id_vehiculo`, `fecha_hora`, `kilometros`, `cre
 (10, 9, '2021-05-15 15:48:00', 100000, '2021-05-15 18:48:21', '2021-05-15 18:48:21', NULL),
 (11, 7, '2021-05-15 15:48:00', 155000, '2021-05-15 18:48:31', '2021-05-16 02:23:48', NULL),
 (12, 8, '2021-05-15 15:48:00', 50000, '2021-05-15 18:48:39', '2021-05-15 18:48:39', NULL),
-(13, 10, '2021-05-20 18:56:00', 123500, '2021-05-20 21:56:59', '2021-05-20 21:56:59', NULL);
+(13, 10, '2021-05-20 18:56:00', 123500, '2021-05-20 21:56:59', '2021-05-20 21:56:59', NULL),
+(14, 11, '2021-05-25 12:30:00', 123132, '2021-05-25 15:30:15', '2021-05-25 15:30:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -243,7 +245,12 @@ INSERT INTO `logs` (`id`, `user`, `operation`, `date`) VALUES
 (67, 'jmulki', 'IN', '2021-05-24 14:03:56'),
 (68, 'jmulki', 'OUT', '2021-05-24 14:52:44'),
 (69, 'jmulki', 'IN', '2021-05-24 14:56:53'),
-(70, 'jmulki', 'IN', '2021-05-24 16:02:56');
+(70, 'jmulki', 'IN', '2021-05-24 16:02:56'),
+(71, 'jmulki', 'IN', '2021-05-24 22:52:39'),
+(72, 'Jmulki', 'IN', '2021-05-24 22:57:51'),
+(73, 'jmulki', 'IN', '2021-05-25 13:45:36'),
+(74, 'jmulki', 'IN', '2021-05-25 15:26:17'),
+(75, 'jmulki', 'OUT', '2021-05-25 15:42:09');
 
 -- --------------------------------------------------------
 
@@ -282,7 +289,8 @@ INSERT INTO `menu` (`id`, `order`, `label`, `link`, `parent`) VALUES
 (16, 4, 'Correctivo', NULL, 0),
 (17, 1, 'Actividades', '/correctivo/actividades', 16),
 (18, 2, 'Agenda', '/correctivo/agenda', 16),
-(19, 1, 'Vehículos', '/archivos/vehiculos', 9);
+(19, 1, 'Vehículos', '/archivos/vehiculos', 9),
+(20, 3, 'Historial de Servicios', '/reportes/historial', 2);
 
 -- --------------------------------------------------------
 
@@ -341,7 +349,8 @@ INSERT INTO `permisos` (`id`, `user`, `id_opcion`) VALUES
 (51, 'jmulki', 15),
 (52, 'jmulki', 17),
 (53, 'jmulki', 18),
-(54, 'jmulki', 19);
+(54, 'jmulki', 19),
+(55, 'jmulki', 20);
 
 -- --------------------------------------------------------
 
@@ -380,7 +389,8 @@ INSERT INTO `preventivo` (`id`, `id_vehiculo`, `id_parte`, `id_tarea`, `detalles
 (9, 9, 3, 3, 'tarea de utilitario sobre trabajo (cambiar)', 15, NULL, '2021-05-05', NULL, '2021-05-15 18:50:03', '2021-05-15 18:50:03', NULL),
 (10, 7, 1, 3, 'cambio una parte de yamaha (doble control de intervalo)', 10, 500, '2021-05-19', 333333, '2021-05-15 18:51:03', '2021-05-19 23:24:09', NULL),
 (11, 8, 1, 1, 'tarea uno de una parte', NULL, 1000, NULL, 50500, '2021-05-15 18:51:36', '2021-05-19 23:27:45', NULL),
-(12, 10, 1, 1, 'detalles de la tarea', 10, NULL, '2021-05-28', NULL, '2021-05-18 21:54:17', '2021-05-19 23:30:18', NULL);
+(12, 10, 1, 1, 'detalles de la tarea', 10, NULL, '2021-05-28', NULL, '2021-05-18 21:54:17', '2021-05-19 23:30:18', NULL),
+(13, 11, 4, 4, 'asdfasdf', 10, NULL, '2021-05-25', NULL, '2021-05-25 15:33:58', '2021-05-25 15:41:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -412,7 +422,8 @@ INSERT INTO `preventivo_tareas` (`id`, `id_preventivo`, `user`, `fecha`, `kilome
 (4, 10, 'jmulki', '2021-05-19', 150000, NULL, 1, '2021-05-19 23:23:23', '2021-05-19 23:23:23', NULL),
 (5, 10, 'jmulki', '2021-05-19', 333333, NULL, 0, '2021-05-19 23:24:09', '2021-05-19 23:24:09', NULL),
 (6, 11, 'jmulki', '2021-05-19', 50500, NULL, 0, '2021-05-19 23:27:45', '2021-05-19 23:27:45', NULL),
-(7, 12, 'jmulki', '2021-05-28', 3522345, NULL, 0, '2021-05-19 23:30:18', '2021-05-19 23:30:18', NULL);
+(7, 12, 'jmulki', '2021-05-28', 3522345, NULL, 0, '2021-05-19 23:30:18', '2021-05-19 23:30:18', NULL),
+(8, 13, 'jmulki', '2021-05-25', 1231234, 'asdfasdf', 0, '2021-05-25 15:41:39', '2021-05-25 15:41:39', NULL);
 
 -- --------------------------------------------------------
 
@@ -500,7 +511,8 @@ INSERT INTO `vehiculos` (`id`, `id_tipo`, `descripcion`, `alias`, `patente`, `id
 (7, 2, 'Yamaha', 'Moto de Juan', 'LXG764', 1, 2020, 5, '2021-05-06', NULL, '2021-04-20 18:40:54', '2021-04-23 14:48:27', NULL),
 (8, 5, 'Otro', 'Otro', 'LXG768', 3, 2030, 6, '2020-04-30', NULL, '2021-04-23 14:49:29', '2021-04-23 14:49:29', NULL),
 (9, 4, 'utilitario', 'utilitario grande', 'UID987', 2, 2013, 6, '2021-04-29', 150000, '2021-04-29 15:33:13', '2021-05-24 14:50:36', NULL),
-(10, 1, 'Moto', 'mi moto', 'LG123SD', 1, 2015, 5, '2020-01-01', NULL, '2021-05-18 21:53:09', '2021-05-18 21:53:09', NULL);
+(10, 1, 'Moto', 'mi moto', 'LG123SD', 1, 2015, 5, '2020-01-01', NULL, '2021-05-18 21:53:09', '2021-05-18 21:53:09', NULL),
+(11, 4, 'Sin alias sin fecha', NULL, 'LXG764', 2, 2000, 5, NULL, NULL, '2021-05-25 15:27:26', '2021-05-25 15:27:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -523,6 +535,29 @@ INSERT INTO `vehiculos_tipos` (`id`, `tipo`) VALUES
 (3, 'Camioneta'),
 (4, 'Utilitario'),
 (5, 'Otro');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vw_historial`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `vw_historial` (
+`id_vehiculo` int(11)
+,`descripcion` varchar(50)
+,`alias` varchar(30)
+,`apenom` varchar(50)
+,`abrev` varchar(10)
+,`tarea` varchar(30)
+,`parte` varchar(40)
+,`detallesMantenimiento` mediumtext
+,`user` varchar(20)
+,`fecha` date
+,`kilometros` int(11)
+,`detallesTarea` mediumtext
+,`resultado` varchar(13)
+,`mantenimiento` varchar(10)
+);
 
 -- --------------------------------------------------------
 
@@ -574,6 +609,15 @@ CREATE TABLE `vw_vehiculos_km` (
 ,`kilometros` int(11)
 ,`fecha_hora` datetime
 );
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `vw_historial`
+--
+DROP TABLE IF EXISTS `vw_historial`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_historial`  AS  select `vehiculos`.`id` AS `id_vehiculo`,`vehiculos`.`descripcion` AS `descripcion`,`vehiculos`.`alias` AS `alias`,`choferes`.`apenom` AS `apenom`,`choferes`.`abrev` AS `abrev`,`tareas`.`tarea` AS `tarea`,`partes`.`parte` AS `parte`,`preventivo`.`detalles` AS `detallesMantenimiento`,`preventivo_tareas`.`user` AS `user`,`preventivo_tareas`.`fecha` AS `fecha`,`preventivo_tareas`.`kilometros` AS `kilometros`,`preventivo_tareas`.`detalles` AS `detallesTarea`,if(`preventivo_tareas`.`cumplimentado` = 1,'CUMPLIMENTADO','DESESTIMADO') AS `resultado`,'PREVENTIVO' AS `mantenimiento` from (((((`preventivo_tareas` join `preventivo` on(`preventivo_tareas`.`id_preventivo` = `preventivo`.`id`)) join `vehiculos` on(`preventivo`.`id_vehiculo` = `vehiculos`.`id`)) join `choferes` on(`vehiculos`.`id_chofer` = `choferes`.`id`)) join `tareas` on(`preventivo`.`id_tarea` = `tareas`.`id`)) join `partes` on(`preventivo`.`id_parte` = `partes`.`id`)) union select `vehiculos`.`id` AS `id_vehiculo`,`vehiculos`.`descripcion` AS `descripcion`,`vehiculos`.`alias` AS `alias`,`choferes`.`apenom` AS `apenom`,`choferes`.`abrev` AS `abrev`,`tareas`.`tarea` AS `tarea`,`partes`.`parte` AS `parte`,`correctivo`.`detalles` AS `detallesMantenimiento`,`correctivo_tareas`.`user` AS `user`,`correctivo_tareas`.`fecha` AS `fecha`,`correctivo_tareas`.`kilometros` AS `kilometros`,`correctivo_tareas`.`detalles` AS `detallesTarea`,if(`correctivo_tareas`.`cumplimentado` = 1,'CUMPLIMENTADO','DESESTIMADO') AS `resultado`,'CORRECTIVO' AS `mantenimiento` from (((((`correctivo_tareas` join `correctivo` on(`correctivo_tareas`.`id_correctivo` = `correctivo`.`id`)) join `vehiculos` on(`correctivo`.`id_vehiculo` = `vehiculos`.`id`)) join `choferes` on(`vehiculos`.`id_chofer` = `choferes`.`id`)) join `tareas` on(`correctivo`.`id_tarea` = `tareas`.`id`)) join `partes` on(`correctivo`.`id_parte` = `partes`.`id`)) order by `fecha` ;
 
 -- --------------------------------------------------------
 
@@ -733,7 +777,7 @@ ALTER TABLE `combustible_tipos`
 -- AUTO_INCREMENT de la tabla `correctivo`
 --
 ALTER TABLE `correctivo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `correctivo_tareas`
@@ -745,13 +789,13 @@ ALTER TABLE `correctivo_tareas`
 -- AUTO_INCREMENT de la tabla `kilometraje`
 --
 ALTER TABLE `kilometraje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `partes`
@@ -763,19 +807,19 @@ ALTER TABLE `partes`
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `preventivo`
 --
 ALTER TABLE `preventivo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `preventivo_tareas`
 --
 ALTER TABLE `preventivo_tareas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tareas`
@@ -793,7 +837,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `vehiculos`
 --
 ALTER TABLE `vehiculos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `vehiculos_tipos`
