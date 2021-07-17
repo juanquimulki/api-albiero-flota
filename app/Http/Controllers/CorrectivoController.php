@@ -60,7 +60,7 @@ class CorrectivoController extends Controller
     public function agenda(Request $request)
     {
         $results = \App\Correctivo::
-            select('correctivo.id','descripcion','alias','parte','tarea','detalles','fecha','correctivo.kilometros')            
+            select('correctivo.id','descripcion','alias','patente','parte','tarea','detalles','fecha','correctivo.kilometros')            
             ->selectRaw('concat(descripcion," ","(",alias,")") as descripcion_alias') 
             ->selectRaw('datediff(?,fecha) as vencimientoDias',[date("Y-m-d")])
             ->selectRaw('vw_vehiculos_km.kilometros-correctivo.kilometros as vencimientoKms')
