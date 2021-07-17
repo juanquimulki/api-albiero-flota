@@ -26,6 +26,18 @@ $router->patch('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoControll
 $router->delete('/vehiculo', ['middleware' => 'auth', 'uses' => 'VehiculoController@delete']);
 $router->options('/vehiculo', function() { return "OPTIONS"; });
 
+$router->post('/proveedor', ['middleware' => 'auth', 'uses' => 'ProveedorController@create']);
+$router->get('/proveedor', ['middleware' => 'auth', 'uses' => 'ProveedorController@read']);
+$router->patch('/proveedor', ['middleware' => 'auth', 'uses' => 'ProveedorController@update']);
+$router->delete('/proveedor', ['middleware' => 'auth', 'uses' => 'ProveedorController@delete']);
+$router->options('/proveedor', function() { return "OPTIONS"; });
+
+$router->post('/repuesto', ['middleware' => 'auth', 'uses' => 'RepuestoController@create']);
+$router->get('/repuesto', ['middleware' => 'auth', 'uses' => 'RepuestoController@read']);
+$router->patch('/repuesto', ['middleware' => 'auth', 'uses' => 'RepuestoController@update']);
+$router->delete('/repuesto', ['middleware' => 'auth', 'uses' => 'RepuestoController@delete']);
+$router->options('/repuesto', function() { return "OPTIONS"; });
+
 $router->get('/vehiculotipo', ['middleware' => 'auth', 'uses' => 'VehiculoTipoController@read']);
 $router->options('/vehiculotipo', function() { return "OPTIONS"; });
 
