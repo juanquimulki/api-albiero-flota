@@ -65,14 +65,28 @@ class ReporteController extends Controller
     public function historial(Request $request)
     {
         if ($request->id_vehiculo > 0) {
-            $results = DB::table('vw_historial')
-                            ->whereRaw('id_vehiculo = ?  and fecha BETWEEN ? and ?',[$request->id_vehiculo,$request->desde,$request->hasta])
-                            ->get();        
+            if ($request->cumplimentado == 1) {
+                $results = DB::table('vw_historial')
+                ->whereRaw('id_vehiculo = ? and fecha BETWEEN ? and ? and cumplimentado = 1',[$request->id_vehiculo,$request->desde,$request->hasta])
+                ->get();        
+            }
+            else {
+                $results = DB::table('vw_historial')
+                ->whereRaw('id_vehiculo = ?  and fecha BETWEEN ? and ?',[$request->id_vehiculo,$request->desde,$request->hasta])
+                ->get();        
+            }
         }
         else {
-            $results = DB::table('vw_historial')
-                            ->whereRaw('fecha BETWEEN ? and ?',[$request->desde,$request->hasta])        
-                            ->get();        
+            if ($request->cumplimentado == 1) {
+                $results = DB::table('vw_historial')
+                ->whereRaw('fecha BETWEEN ? and ? and cumplimentado = 1',[$request->desde,$request->hasta])        
+                ->get();        
+            }
+            else {
+                $results = DB::table('vw_historial')
+                ->whereRaw('fecha BETWEEN ? and ?',[$request->desde,$request->hasta])        
+                ->get();        
+            }
         }
         return parent::response(true,$results);
     }
