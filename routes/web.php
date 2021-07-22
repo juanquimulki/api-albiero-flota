@@ -83,6 +83,9 @@ $router->options('/preventivo/agenda/kilometros', function() { return "OPTIONS";
 $router->post('/preventivo/tarea', ['middleware' => 'auth', 'uses' => 'PreventivoTareaController@create']);
 $router->options('/preventivo/tarea', function() { return "OPTIONS"; });
 
+$router->post('/preventivo/factura', ['middleware' => 'auth', 'uses' => 'PreventivoFacturaController@create']);
+$router->options('/preventivo/factura', function() { return "OPTIONS"; });
+
 $router->post('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@create']);
 $router->get('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@read']);
 $router->patch('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@update']);
