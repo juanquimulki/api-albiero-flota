@@ -14,7 +14,7 @@ class PreventivoFacturaController extends Controller
     {
         $factura = new PreventivoFactura;
 
-        $factura->id_preventivo = $request->id_preventivo;
+        $factura->id_tarea = $request->id_tarea;
         $factura->numero = $request->numero;
         $factura->id_proveedor = $request->id_proveedor;
         $factura->monto = $request->monto;
@@ -23,4 +23,10 @@ class PreventivoFacturaController extends Controller
 
         return parent::response($save,null);
     }
+
+    public function read(Request $request)
+    {
+        $results = \App\PreventivoFactura::orderBy("id","desc")->get();
+        return parent::response(true,$results);
+    }    
 }

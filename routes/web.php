@@ -84,6 +84,7 @@ $router->post('/preventivo/tarea', ['middleware' => 'auth', 'uses' => 'Preventiv
 $router->options('/preventivo/tarea', function() { return "OPTIONS"; });
 
 $router->post('/preventivo/factura', ['middleware' => 'auth', 'uses' => 'PreventivoFacturaController@create']);
+$router->get('/preventivo/factura', ['middleware' => 'auth', 'uses' => 'PreventivoFacturaController@read']);
 $router->options('/preventivo/factura', function() { return "OPTIONS"; });
 
 $router->post('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@create']);
