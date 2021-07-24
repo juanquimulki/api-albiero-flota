@@ -26,7 +26,10 @@ class PreventivoFacturaController extends Controller
 
     public function read(Request $request)
     {
-        $results = \App\PreventivoFactura::orderBy("id","desc")->get();
+        $results = \App\PreventivoFactura
+            ::where("id_tarea","=",$request->id_tarea)
+            ->with("proveedor")
+            ->orderBy("id","desc")->get();
         return parent::response(true,$results);
     }    
 }

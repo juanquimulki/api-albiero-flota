@@ -10,4 +10,8 @@ class PreventivoFactura extends Model
     use SoftDeletes;
 
     protected $table  = 'preventivo_facturas';
+
+    public function proveedor() {
+        return $this->belongsTo(Proveedor::class, 'id_proveedor', 'id');
+    }
 }
