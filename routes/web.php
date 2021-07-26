@@ -89,6 +89,12 @@ $router->patch('/preventivo/factura', ['middleware' => 'auth', 'uses' => 'Preven
 $router->delete('/preventivo/factura', ['middleware' => 'auth', 'uses' => 'PreventivoFacturaController@delete']);
 $router->options('/preventivo/factura', function() { return "OPTIONS"; });
 
+$router->post('/preventivo/repuesto', ['middleware' => 'auth', 'uses' => 'PreventivoRepuestoController@create']);
+$router->get('/preventivo/repuesto', ['middleware' => 'auth', 'uses' => 'PreventivoRepuestoController@read']);
+$router->patch('/preventivo/repuesto', ['middleware' => 'auth', 'uses' => 'PreventivoRepuestoController@update']);
+$router->delete('/preventivo/repuesto', ['middleware' => 'auth', 'uses' => 'PreventivoRepuestoController@delete']);
+$router->options('/preventivo/repuesto', function() { return "OPTIONS"; });
+
 $router->post('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@create']);
 $router->get('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@read']);
 $router->patch('/correctivo', ['middleware' => 'auth', 'uses' => 'CorrectivoController@update']);
@@ -106,6 +112,12 @@ $router->get('/correctivo/factura', ['middleware' => 'auth', 'uses' => 'Correcti
 $router->patch('/correctivo/factura', ['middleware' => 'auth', 'uses' => 'CorrectivoFacturaController@update']);
 $router->delete('/correctivo/factura', ['middleware' => 'auth', 'uses' => 'CorrectivoFacturaController@delete']);
 $router->options('/correctivo/factura', function() { return "OPTIONS"; });
+
+$router->post('/correctivo/repuesto', ['middleware' => 'auth', 'uses' => 'CorrectivoRepuestoController@create']);
+$router->get('/correctivo/repuesto', ['middleware' => 'auth', 'uses' => 'CorrectivoRepuestoController@read']);
+$router->patch('/correctivo/repuesto', ['middleware' => 'auth', 'uses' => 'CorrectivoRepuestoController@update']);
+$router->delete('/correctivo/repuesto', ['middleware' => 'auth', 'uses' => 'CorrectivoRepuestoController@delete']);
+$router->options('/correctivo/repuesto', function() { return "OPTIONS"; });
 
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
