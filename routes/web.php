@@ -101,6 +101,12 @@ $router->options('/correctivo/agenda', function() { return "OPTIONS"; });
 $router->post('/correctivo/tarea', ['middleware' => 'auth', 'uses' => 'CorrectivoTareaController@create']);
 $router->options('/correctivo/tarea', function() { return "OPTIONS"; });
 
+$router->post('/correctivo/factura', ['middleware' => 'auth', 'uses' => 'CorrectivoFacturaController@create']);
+$router->get('/correctivo/factura', ['middleware' => 'auth', 'uses' => 'CorrectivoFacturaController@read']);
+$router->patch('/correctivo/factura', ['middleware' => 'auth', 'uses' => 'CorrectivoFacturaController@update']);
+$router->delete('/correctivo/factura', ['middleware' => 'auth', 'uses' => 'CorrectivoFacturaController@delete']);
+$router->options('/correctivo/factura', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });

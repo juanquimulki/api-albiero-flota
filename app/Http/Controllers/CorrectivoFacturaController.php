@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\PreventivoFactura;
+use App\CorrectivoFactura;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
-class PreventivoFacturaController extends Controller
+class CorrectivoFacturaController extends Controller
 {
     public function create(Request $request)
     {
-        $factura = new PreventivoFactura;
+        $factura = new CorrectivoFactura;
 
         $factura->id_tarea = $request->id_tarea;
         $factura->numero = $request->numero;
@@ -26,7 +26,7 @@ class PreventivoFacturaController extends Controller
 
     public function read(Request $request)
     {
-        $results = \App\PreventivoFactura
+        $results = \App\CorrectivoFactura
             ::where("id_tarea","=",$request->id_tarea)
             ->with("proveedor")
             ->orderBy("id","asc")->get();
@@ -35,7 +35,7 @@ class PreventivoFacturaController extends Controller
     
     public function update(Request $request)
     {
-        $factura = \App\PreventivoFactura::find($request->id);
+        $factura = \App\CorrectivoFactura::find($request->id);
 
         $factura->numero = $request->numero;
         $factura->fecha = $request->fecha;
@@ -48,7 +48,7 @@ class PreventivoFacturaController extends Controller
     
     public function delete(Request $request)
     {
-        $destroy = \App\PreventivoFactura::destroy($request->id);
+        $destroy = \App\CorrectivoFactura::destroy($request->id);
         return parent::response($destroy,null);
     }    
 }
