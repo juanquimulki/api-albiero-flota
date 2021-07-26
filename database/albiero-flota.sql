@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-06-2021 a las 19:28:23
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.4
+-- Tiempo de generación: 27-07-2021 a las 01:51:59
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -96,6 +96,54 @@ INSERT INTO `correctivo` (`id`, `id_vehiculo`, `id_parte`, `id_tarea`, `detalles
 (1, 9, 4, 3, 'se rompio el asdasdads asdfsadf', '2021-05-07', 123455, NULL, '2021-05-20 21:20:18', '2021-05-20 21:21:09', '2021-05-20 21:21:09'),
 (2, 10, 3, 1, 'se rompio la moto', '2021-05-21', 123123, 0, '2021-05-20 21:21:05', '2021-05-22 16:18:20', NULL),
 (3, 11, 4, 3, 'sdfasdf', '2021-05-25', 1234, NULL, '2021-05-25 15:34:41', '2021-05-25 15:34:41', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `correctivo_facturas`
+--
+
+CREATE TABLE `correctivo_facturas` (
+  `id` int(11) NOT NULL,
+  `id_tarea` int(11) NOT NULL,
+  `numero` varchar(20) NOT NULL,
+  `fecha` date NOT NULL,
+  `id_proveedor` int(11) NOT NULL,
+  `monto` double NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `correctivo_facturas`
+--
+
+INSERT INTO `correctivo_facturas` (`id`, `id_tarea`, `numero`, `fecha`, `id_proveedor`, `monto`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, '333', '2021-07-03', 2, 444, '2021-07-26 23:03:47', '2021-07-26 23:04:47', '2021-07-26 23:04:47'),
+(2, 1, '3465', '2021-07-06', 2, 2346, '2021-07-26 23:04:41', '2021-07-26 23:04:41', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `correctivo_repuestos`
+--
+
+CREATE TABLE `correctivo_repuestos` (
+  `id` int(11) NOT NULL,
+  `id_tarea` int(11) NOT NULL,
+  `id_repuesto` int(11) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `correctivo_repuestos`
+--
+
+INSERT INTO `correctivo_repuestos` (`id`, `id_tarea`, `id_repuesto`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 1, '2021-07-26 23:49:55', '2021-07-26 23:49:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -250,7 +298,29 @@ INSERT INTO `logs` (`id`, `user`, `operation`, `date`) VALUES
 (72, 'Jmulki', 'IN', '2021-05-24 22:57:51'),
 (73, 'jmulki', 'IN', '2021-05-25 13:45:36'),
 (74, 'jmulki', 'IN', '2021-05-25 15:26:17'),
-(75, 'jmulki', 'OUT', '2021-05-25 15:42:09');
+(75, 'jmulki', 'OUT', '2021-05-25 15:42:09'),
+(76, 'jmulki', 'IN', '2021-07-05 15:55:34'),
+(77, 'jmulki', 'IN', '2021-07-17 14:32:17'),
+(78, 'jmulki', 'OUT', '2021-07-17 14:38:51'),
+(79, 'jmulki', 'IN', '2021-07-17 14:39:55'),
+(80, 'jmulki', 'IN', '2021-07-17 15:41:55'),
+(81, 'jmulki', 'IN', '2021-07-17 17:15:18'),
+(82, 'jmulki', 'IN', '2021-07-18 00:17:30'),
+(83, 'jmulki', 'IN', '2021-07-21 23:28:52'),
+(84, 'jmulki', 'OUT', '2021-07-21 23:34:08'),
+(85, 'jmulki', 'IN', '2021-07-21 23:34:12'),
+(86, 'jmulki', 'IN', '2021-07-22 15:50:28'),
+(87, 'jmulki', 'OUT', '2021-07-22 18:20:22'),
+(88, 'jmulki', 'IN', '2021-07-22 18:20:29'),
+(89, 'jmulki', 'IN', '2021-07-22 19:15:29'),
+(90, 'jmulki', 'OUT', '2021-07-24 15:12:33'),
+(91, 'jmulki', 'IN', '2021-07-24 15:12:37'),
+(92, 'jmulki', 'OUT', '2021-07-24 16:20:08'),
+(93, 'jmulki', 'IN', '2021-07-24 16:20:12'),
+(94, 'jmulki', 'IN', '2021-07-24 17:01:53'),
+(95, 'jmulki', 'IN', '2021-07-26 22:20:44'),
+(96, 'jmulki', 'OUT', '2021-07-26 23:19:10'),
+(97, 'jmulki', 'IN', '2021-07-26 23:19:15');
 
 -- --------------------------------------------------------
 
@@ -290,7 +360,11 @@ INSERT INTO `menu` (`id`, `order`, `label`, `link`, `parent`) VALUES
 (17, 1, 'Actividades', '/correctivo/actividades', 16),
 (18, 2, 'Agenda', '/correctivo/agenda', 16),
 (19, 1, 'Vehículos', '/archivos/vehiculos', 9),
-(20, 3, 'Historial de Servicios', '/reportes/historial', 2);
+(20, 3, 'Historial de Servicios', '/reportes/historial', 2),
+(21, 3, 'Proveedores', '/archivos/proveedores', 1),
+(22, 4, 'Repuestos', '/archivos/repuestos', 1),
+(23, 3, 'Más Datos', '/preventivo/masdatos', 13),
+(24, 3, 'Más Datos', '/correctivo/masdatos', 16);
 
 -- --------------------------------------------------------
 
@@ -350,7 +424,11 @@ INSERT INTO `permisos` (`id`, `user`, `id_opcion`) VALUES
 (52, 'jmulki', 17),
 (53, 'jmulki', 18),
 (54, 'jmulki', 19),
-(55, 'jmulki', 20);
+(55, 'jmulki', 20),
+(56, 'jmulki', 21),
+(57, 'jmulki', 22),
+(58, 'jmulki', 23),
+(59, 'jmulki', 24);
 
 -- --------------------------------------------------------
 
@@ -395,6 +473,55 @@ INSERT INTO `preventivo` (`id`, `id_vehiculo`, `id_parte`, `id_tarea`, `detalles
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `preventivo_facturas`
+--
+
+CREATE TABLE `preventivo_facturas` (
+  `id` int(11) NOT NULL,
+  `id_tarea` int(11) NOT NULL,
+  `numero` varchar(20) NOT NULL,
+  `fecha` date NOT NULL,
+  `id_proveedor` int(11) NOT NULL,
+  `monto` double NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `preventivo_facturas`
+--
+
+INSERT INTO `preventivo_facturas` (`id`, `id_tarea`, `numero`, `fecha`, `id_proveedor`, `monto`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(10, 1, '123', '2021-07-07', 2, 123, '2021-07-26 22:50:30', '2021-07-26 22:50:30', NULL),
+(11, 1, '2', '2021-07-08', 2, 2, '2021-07-26 23:10:07', '2021-07-26 23:10:07', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `preventivo_repuestos`
+--
+
+CREATE TABLE `preventivo_repuestos` (
+  `id` int(11) NOT NULL,
+  `id_tarea` int(11) NOT NULL,
+  `id_repuesto` int(11) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `preventivo_repuestos`
+--
+
+INSERT INTO `preventivo_repuestos` (`id`, `id_tarea`, `id_repuesto`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 1, '2021-07-26 23:49:29', '2021-07-26 23:49:29', NULL),
+(2, 1, 1, '2021-07-26 23:49:34', '2021-07-26 23:49:39', '2021-07-26 23:49:39');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `preventivo_tareas`
 --
 
@@ -424,6 +551,50 @@ INSERT INTO `preventivo_tareas` (`id`, `id_preventivo`, `user`, `fecha`, `kilome
 (6, 11, 'jmulki', '2021-05-19', 50500, NULL, 0, '2021-05-19 23:27:45', '2021-05-19 23:27:45', NULL),
 (7, 12, 'jmulki', '2021-05-28', 3522345, NULL, 0, '2021-05-19 23:30:18', '2021-05-19 23:30:18', NULL),
 (8, 13, 'jmulki', '2021-05-25', 1231234, 'asdfasdf', 0, '2021-05-25 15:41:39', '2021-05-25 15:41:39', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedores`
+--
+
+CREATE TABLE `proveedores` (
+  `id` int(11) NOT NULL,
+  `razon_social` varchar(40) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`id`, `razon_social`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'provee uno', NULL, '2021-07-17 15:37:16', '2021-07-17 15:37:16'),
+(2, 'otro1', '2021-07-17 15:37:06', '2021-07-17 15:37:12', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `repuestos`
+--
+
+CREATE TABLE `repuestos` (
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(50) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `repuestos`
+--
+
+INSERT INTO `repuestos` (`id`, `descripcion`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'rep uno', NULL, NULL, NULL),
+(2, 'rep dos2', '2021-07-17 15:39:41', '2021-07-17 15:39:47', '2021-07-17 15:39:47');
 
 -- --------------------------------------------------------
 
@@ -543,7 +714,8 @@ INSERT INTO `vehiculos_tipos` (`id`, `tipo`) VALUES
 -- (Véase abajo para la vista actual)
 --
 CREATE TABLE `vw_historial` (
-`id_vehiculo` int(11)
+`id` int(11)
+,`id_vehiculo` int(11)
 ,`descripcion` varchar(50)
 ,`alias` varchar(30)
 ,`apenom` varchar(50)
@@ -555,6 +727,7 @@ CREATE TABLE `vw_historial` (
 ,`fecha` date
 ,`kilometros` int(11)
 ,`detallesTarea` mediumtext
+,`cumplimentado` tinyint(4)
 ,`resultado` varchar(13)
 ,`mantenimiento` varchar(10)
 );
@@ -617,7 +790,7 @@ CREATE TABLE `vw_vehiculos_km` (
 --
 DROP TABLE IF EXISTS `vw_historial`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_historial`  AS  select `vehiculos`.`id` AS `id_vehiculo`,`vehiculos`.`descripcion` AS `descripcion`,`vehiculos`.`alias` AS `alias`,`choferes`.`apenom` AS `apenom`,`choferes`.`abrev` AS `abrev`,`tareas`.`tarea` AS `tarea`,`partes`.`parte` AS `parte`,`preventivo`.`detalles` AS `detallesMantenimiento`,`preventivo_tareas`.`user` AS `user`,`preventivo_tareas`.`fecha` AS `fecha`,`preventivo_tareas`.`kilometros` AS `kilometros`,`preventivo_tareas`.`detalles` AS `detallesTarea`,if(`preventivo_tareas`.`cumplimentado` = 1,'CUMPLIMENTADO','DESESTIMADO') AS `resultado`,'PREVENTIVO' AS `mantenimiento` from (((((`preventivo_tareas` join `preventivo` on(`preventivo_tareas`.`id_preventivo` = `preventivo`.`id`)) join `vehiculos` on(`preventivo`.`id_vehiculo` = `vehiculos`.`id`)) join `choferes` on(`vehiculos`.`id_chofer` = `choferes`.`id`)) join `tareas` on(`preventivo`.`id_tarea` = `tareas`.`id`)) join `partes` on(`preventivo`.`id_parte` = `partes`.`id`)) union select `vehiculos`.`id` AS `id_vehiculo`,`vehiculos`.`descripcion` AS `descripcion`,`vehiculos`.`alias` AS `alias`,`choferes`.`apenom` AS `apenom`,`choferes`.`abrev` AS `abrev`,`tareas`.`tarea` AS `tarea`,`partes`.`parte` AS `parte`,`correctivo`.`detalles` AS `detallesMantenimiento`,`correctivo_tareas`.`user` AS `user`,`correctivo_tareas`.`fecha` AS `fecha`,`correctivo_tareas`.`kilometros` AS `kilometros`,`correctivo_tareas`.`detalles` AS `detallesTarea`,if(`correctivo_tareas`.`cumplimentado` = 1,'CUMPLIMENTADO','DESESTIMADO') AS `resultado`,'CORRECTIVO' AS `mantenimiento` from (((((`correctivo_tareas` join `correctivo` on(`correctivo_tareas`.`id_correctivo` = `correctivo`.`id`)) join `vehiculos` on(`correctivo`.`id_vehiculo` = `vehiculos`.`id`)) join `choferes` on(`vehiculos`.`id_chofer` = `choferes`.`id`)) join `tareas` on(`correctivo`.`id_tarea` = `tareas`.`id`)) join `partes` on(`correctivo`.`id_parte` = `partes`.`id`)) order by `fecha` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_historial`  AS SELECT `preventivo_tareas`.`id` AS `id`, `vehiculos`.`id` AS `id_vehiculo`, `vehiculos`.`descripcion` AS `descripcion`, `vehiculos`.`alias` AS `alias`, `choferes`.`apenom` AS `apenom`, `choferes`.`abrev` AS `abrev`, `tareas`.`tarea` AS `tarea`, `partes`.`parte` AS `parte`, `preventivo`.`detalles` AS `detallesMantenimiento`, `preventivo_tareas`.`user` AS `user`, `preventivo_tareas`.`fecha` AS `fecha`, `preventivo_tareas`.`kilometros` AS `kilometros`, `preventivo_tareas`.`detalles` AS `detallesTarea`, `preventivo_tareas`.`cumplimentado` AS `cumplimentado`, if(`preventivo_tareas`.`cumplimentado` = 1,'CUMPLIMENTADO','DESESTIMADO') AS `resultado`, 'PREVENTIVO' AS `mantenimiento` FROM (((((`preventivo_tareas` join `preventivo` on(`preventivo_tareas`.`id_preventivo` = `preventivo`.`id`)) join `vehiculos` on(`preventivo`.`id_vehiculo` = `vehiculos`.`id`)) join `choferes` on(`vehiculos`.`id_chofer` = `choferes`.`id`)) join `tareas` on(`preventivo`.`id_tarea` = `tareas`.`id`)) join `partes` on(`preventivo`.`id_parte` = `partes`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -626,7 +799,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_menu_menues`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_menu_menues`  AS  select `menu`.`id` AS `id`,`menu`.`order` AS `order`,`menu`.`label` AS `label`,`menu`.`link` AS `link`,`menu`.`parent` AS `parent` from `menu` where `menu`.`parent` = 0 ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_menu_menues`  AS SELECT `menu`.`id` AS `id`, `menu`.`order` AS `order`, `menu`.`label` AS `label`, `menu`.`link` AS `link`, `menu`.`parent` AS `parent` FROM `menu` WHERE `menu`.`parent` = 0 ;
 
 -- --------------------------------------------------------
 
@@ -635,7 +808,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_menu_opciones`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_menu_opciones`  AS  select `vw_menu_menues`.`id` AS `id_menu`,`menu`.`id` AS `id_opcion`,`vw_menu_menues`.`label` AS `menu`,`menu`.`label` AS `opcion`,`menu`.`link` AS `link` from (`vw_menu_menues` join `menu` on(`vw_menu_menues`.`id` = `menu`.`parent`)) order by `vw_menu_menues`.`order`,`menu`.`order` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_menu_opciones`  AS SELECT `vw_menu_menues`.`id` AS `id_menu`, `menu`.`id` AS `id_opcion`, `vw_menu_menues`.`label` AS `menu`, `menu`.`label` AS `opcion`, `menu`.`link` AS `link` FROM (`vw_menu_menues` join `menu` on(`vw_menu_menues`.`id` = `menu`.`parent`)) ORDER BY `vw_menu_menues`.`order` ASC, `menu`.`order` ASC ;
 
 -- --------------------------------------------------------
 
@@ -644,7 +817,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_ultimo_km`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_ultimo_km`  AS  select `kilometraje`.`id_vehiculo` AS `id_vehiculo`,max(`kilometraje`.`id`) AS `ultimo` from `kilometraje` group by `kilometraje`.`id_vehiculo` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_ultimo_km`  AS SELECT `kilometraje`.`id_vehiculo` AS `id_vehiculo`, max(`kilometraje`.`id`) AS `ultimo` FROM `kilometraje` GROUP BY `kilometraje`.`id_vehiculo` ;
 
 -- --------------------------------------------------------
 
@@ -653,7 +826,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_vehiculos_km`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_vehiculos_km`  AS  select `kilometraje`.`id_vehiculo` AS `id_vehiculo`,`kilometraje`.`kilometros` AS `kilometros`,`kilometraje`.`fecha_hora` AS `fecha_hora` from (`vw_ultimo_km` join `kilometraje` on(`vw_ultimo_km`.`ultimo` = `kilometraje`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_vehiculos_km`  AS SELECT `kilometraje`.`id_vehiculo` AS `id_vehiculo`, `kilometraje`.`kilometros` AS `kilometros`, `kilometraje`.`fecha_hora` AS `fecha_hora` FROM (`vw_ultimo_km` join `kilometraje` on(`vw_ultimo_km`.`ultimo` = `kilometraje`.`id`)) ;
 
 --
 -- Índices para tablas volcadas
@@ -677,6 +850,18 @@ ALTER TABLE `combustible_tipos`
 ALTER TABLE `correctivo`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_correctivo_vehiculos_id` (`id_vehiculo`);
+
+--
+-- Indices de la tabla `correctivo_facturas`
+--
+ALTER TABLE `correctivo_facturas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `correctivo_repuestos`
+--
+ALTER TABLE `correctivo_repuestos`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `correctivo_tareas`
@@ -724,11 +909,37 @@ ALTER TABLE `preventivo`
   ADD KEY `FK_preventivo_vehiculos_id` (`id_vehiculo`);
 
 --
+-- Indices de la tabla `preventivo_facturas`
+--
+ALTER TABLE `preventivo_facturas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_preventivo_facturas_preventivo_tareas_id` (`id_tarea`);
+
+--
+-- Indices de la tabla `preventivo_repuestos`
+--
+ALTER TABLE `preventivo_repuestos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_preventivo_repuestos_preventivo_tareas_id` (`id_tarea`);
+
+--
 -- Indices de la tabla `preventivo_tareas`
 --
 ALTER TABLE `preventivo_tareas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FK_preventivo_tareas_preventivo_id` (`id_preventivo`);
+
+--
+-- Indices de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `repuestos`
+--
+ALTER TABLE `repuestos`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `tareas`
@@ -780,6 +991,18 @@ ALTER TABLE `correctivo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `correctivo_facturas`
+--
+ALTER TABLE `correctivo_facturas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `correctivo_repuestos`
+--
+ALTER TABLE `correctivo_repuestos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `correctivo_tareas`
 --
 ALTER TABLE `correctivo_tareas`
@@ -795,7 +1018,7 @@ ALTER TABLE `kilometraje`
 -- AUTO_INCREMENT de la tabla `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT de la tabla `partes`
@@ -807,7 +1030,7 @@ ALTER TABLE `partes`
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de la tabla `preventivo`
@@ -816,10 +1039,34 @@ ALTER TABLE `preventivo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT de la tabla `preventivo_facturas`
+--
+ALTER TABLE `preventivo_facturas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `preventivo_repuestos`
+--
+ALTER TABLE `preventivo_repuestos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `preventivo_tareas`
 --
 ALTER TABLE `preventivo_tareas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedores`
+--
+ALTER TABLE `proveedores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `repuestos`
+--
+ALTER TABLE `repuestos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tareas`
@@ -872,6 +1119,18 @@ ALTER TABLE `kilometraje`
 --
 ALTER TABLE `preventivo`
   ADD CONSTRAINT `FK_preventivo_vehiculos_id` FOREIGN KEY (`id_vehiculo`) REFERENCES `vehiculos` (`id`);
+
+--
+-- Filtros para la tabla `preventivo_facturas`
+--
+ALTER TABLE `preventivo_facturas`
+  ADD CONSTRAINT `FK_preventivo_facturas_preventivo_tareas_id` FOREIGN KEY (`id_tarea`) REFERENCES `preventivo_tareas` (`id`);
+
+--
+-- Filtros para la tabla `preventivo_repuestos`
+--
+ALTER TABLE `preventivo_repuestos`
+  ADD CONSTRAINT `FK_preventivo_repuestos_preventivo_tareas_id` FOREIGN KEY (`id_tarea`) REFERENCES `preventivo_tareas` (`id`);
 
 --
 -- Filtros para la tabla `preventivo_tareas`
