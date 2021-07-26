@@ -40,6 +40,6 @@ class ChoferController extends Controller
     public function delete(Request $request)
     {
         $destroy = \App\Chofer::destroy($request->id);
-       return parent::response($destroy,null);
+        return parent::response($destroy,null);
     }
 }

@@ -16,6 +16,7 @@ class PreventivoFacturaController extends Controller
 
         $factura->id_tarea = $request->id_tarea;
         $factura->numero = $request->numero;
+        $factura->fecha = $request->fecha;
         $factura->id_proveedor = $request->id_proveedor;
         $factura->monto = $request->monto;
         
@@ -29,7 +30,26 @@ class PreventivoFacturaController extends Controller
         $results = \App\PreventivoFactura
             ::where("id_tarea","=",$request->id_tarea)
             ->with("proveedor")
-            ->orderBy("id","desc")->get();
+            ->orderBy("id","asc")->get();
         return parent::response(true,$results);
+    } 
+    
+    public function update(Request $request)
+    {
+        $factura = \App\PreventivoFactura::find($request->id);
+
+        $factura->numero = $request->numero;
+        $factura->fecha = $request->fecha;
+        $factura->id_proveedor = $request->id_proveedor;
+        $factura->monto = $request->monto;
+        $save = $factura->save();
+
+        return parent::response($save,null);
+    }
+    
+    public function delete(Request $request)
+    {
+        $destroy = \App\PreventivoFactura::destroy($request->id);
+        return parent::response($destroy,null);
     }    
 }
