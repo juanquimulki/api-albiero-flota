@@ -90,4 +90,19 @@ class ReporteController extends Controller
         }
         return parent::response(true,$results);
     }
+
+    public function gastos(Request $request)
+    {
+        if ($request->id_vehiculo > 0) {
+            $results = DB::table('vw_tareas_gastos')
+            ->whereRaw('id_vehiculo = ?  and fecha BETWEEN ? and ?',[$request->id_vehiculo,$request->desde,$request->hasta])
+            ->get();        
+        }
+        else {
+            $results = DB::table('vw_tareas_gastos')
+            ->whereRaw('fecha BETWEEN ? and ?',[$request->desde,$request->hasta])        
+            ->get();        
+        }
+        return parent::response(true,$results);
+    }
 }
