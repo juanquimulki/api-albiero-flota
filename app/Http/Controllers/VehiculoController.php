@@ -29,7 +29,7 @@ class VehiculoController extends Controller
     
     public function read(Request $request)
     {
-        $results = \App\Vehiculo::with("tipo")->with("chofer")->get();
+        $results = \App\Vehiculo::with("tipo")->with("chofer")->orderBy("patente","asc")->get();
         return parent::response(true,$results);
     }
 
