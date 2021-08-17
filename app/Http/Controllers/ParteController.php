@@ -21,7 +21,7 @@ class ParteController extends Controller
 
     public function read(Request $request)
     {
-        $results = \App\Parte::orderBy("id","desc")->get();
+        $results = \App\Parte::orderBy("parte","asc")->get();
         return parent::response(true,$results);
     }
 
