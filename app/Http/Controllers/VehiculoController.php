@@ -22,6 +22,9 @@ class VehiculoController extends Controller
         $vehiculo->id_chofer = $request->id_chofer;
         $vehiculo->fecha_venc_gtia = $request->fecha_venc_gtia;
         $vehiculo->kms_venc_gtia = $request->kms_venc_gtia;
+        $vehiculo->id_estado = $request->id_estado;
+        $vehiculo->estado_desde = $request->estado_desde;
+
         $save = $vehiculo->save();
 
         return parent::response($save,null);
@@ -29,7 +32,7 @@ class VehiculoController extends Controller
     
     public function read(Request $request)
     {
-        $results = \App\Vehiculo::with("tipo")->with("chofer")->orderBy("patente","asc")->get();
+        $results = \App\Vehiculo::with("tipo")->with("chofer")->with("estado")->orderBy("patente","asc")->get();
         return parent::response(true,$results);
     }
 
@@ -46,6 +49,9 @@ class VehiculoController extends Controller
         $vehiculo->id_chofer = $request->id_chofer;
         $vehiculo->fecha_venc_gtia = $request->fecha_venc_gtia;
         $vehiculo->kms_venc_gtia = $request->kms_venc_gtia;
+        $vehiculo->id_estado = $request->id_estado;
+        $vehiculo->estado_desde = $request->estado_desde;
+
         $save = $vehiculo->save();
 
         return parent::response($save,null);

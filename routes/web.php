@@ -41,6 +41,9 @@ $router->options('/repuesto', function() { return "OPTIONS"; });
 $router->get('/vehiculotipo', ['middleware' => 'auth', 'uses' => 'VehiculoTipoController@read']);
 $router->options('/vehiculotipo', function() { return "OPTIONS"; });
 
+$router->get('/vehiculoestado', ['middleware' => 'auth', 'uses' => 'VehiculoEstadoController@read']);
+$router->options('/vehiculoestado', function() { return "OPTIONS"; });
+
 $router->get('/combustibletipo', ['middleware' => 'auth', 'uses' => 'CombustibleTipoController@read']);
 $router->options('/combustibletipo', function() { return "OPTIONS"; });
 

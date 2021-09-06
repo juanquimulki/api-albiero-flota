@@ -35,4 +35,8 @@ class Vehiculo extends Model
     public function chofer() {
         return $this->belongsTo(Chofer::class, 'id_chofer', 'id');
     }
+
+    public function estado() {
+        return $this->belongsTo(VehiculoEstado::class, 'id_estado', 'id');
+    }    
 }
