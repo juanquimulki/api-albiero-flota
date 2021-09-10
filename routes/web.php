@@ -123,6 +123,12 @@ $router->patch('/correctivo/repuesto', ['middleware' => 'auth', 'uses' => 'Corre
 $router->delete('/correctivo/repuesto', ['middleware' => 'auth', 'uses' => 'CorrectivoRepuestoController@delete']);
 $router->options('/correctivo/repuesto', function() { return "OPTIONS"; });
 
+$router->post('/general', ['middleware' => 'auth', 'uses' => 'GeneralController@create']);
+$router->get('/general', ['middleware' => 'auth', 'uses' => 'GeneralController@read']);
+$router->patch('/general', ['middleware' => 'auth', 'uses' => 'GeneralController@update']);
+$router->delete('/general', ['middleware' => 'auth', 'uses' => 'GeneralController@delete']);
+$router->options('/general', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });
