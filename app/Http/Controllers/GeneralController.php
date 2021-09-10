@@ -47,5 +47,22 @@ class GeneralController extends Controller
     {
         $destroy = \App\General::destroy($request->id);
         return parent::response($destroy,null);
+    }
+    
+    public function agenda(Request $request)
+    {
+        $results = \App\General::with("vehiculo")->get();
+        return parent::response(true,$results);
+    }
+
+    public function cumplimentar(Request $request)
+    {
+        $general = \App\General::find($request->id);
+
+        $general->hecho = !$general->hecho;
+        
+        $save = $general->save();
+
+        return parent::response($save,null);
     }    
 }

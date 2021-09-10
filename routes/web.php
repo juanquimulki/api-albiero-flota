@@ -129,6 +129,10 @@ $router->patch('/general', ['middleware' => 'auth', 'uses' => 'GeneralController
 $router->delete('/general', ['middleware' => 'auth', 'uses' => 'GeneralController@delete']);
 $router->options('/general', function() { return "OPTIONS"; });
 
+$router->get('/general/agenda', ['middleware' => 'auth', 'uses' => 'GeneralController@agenda']);
+$router->patch('/general/agenda', ['middleware' => 'auth', 'uses' => 'GeneralController@cumplimentar']);
+$router->options('/general/agenda', function() { return "OPTIONS"; });
+
 $router->post('/log', ['uses' => 'LogController@create']);
 $router->patch('/log', ['uses' => 'LogController@update']);
 $router->options('/log', function() { return "OPTIONS"; });
