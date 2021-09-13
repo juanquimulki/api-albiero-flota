@@ -51,7 +51,12 @@ class GeneralController extends Controller
     
     public function agenda(Request $request)
     {
-        $results = \App\General::with("vehiculo")->get();
+        $mes  = date("m",strtotime($request->fecha));
+        $anio = date("Y",strtotime($request->fecha));
+        $results = \App\General::with("vehiculo")
+            ->orderBy("fecha")
+            ->whereRaw("month(fecha)=? and year(fecha)=?",[$mes,$anio])
+            ->get();
         return parent::response(true,$results);
     }
 
